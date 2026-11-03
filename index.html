@@ -9,43 +9,96 @@
     min-height: 100vh;
     margin: 0;
   }
+  
+  div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+  }
 
   .frame {
     position: relative;
-    background-color: gray;
+    background-color: black;
     width: 500px;
     height: 500px;
     border: 1px dashed;
   }
-  
-  .handle {
-    position: absolute;
-    width: 30px;
-    height: 25px;
-    background-color: black;
-    left: 125px;
-    top: 80px;
-    border-radius: 50%;
-  }
-
-  .handle-stem {
-    position: absolute;
-    width: 30px;
-    height: 50px;
-    background-color: gray;
-    left: 125px;
-    top: 80px;
-    border-radius: 50%;
-  }
 
   .kettle-top {
     background-color: #FF6729;
-    position: absolute;
-    top: 60px;
-    left: 50px;
+    top: 90px;
+    left: 70px;
+    width: 165px;
+    height: 165px;
+    clip-path: polygon(22% 10%, 50% 3%, 76% 10%, 92% 28%, 92% 42%, 98% 47%, 94% 59%, 85% 58%, 72% 71%, 45% 78%, 16% 72%, 0% 52%, 2% 35%, 9% 20%);
+    z-index: 0;
+  }
+  
+  .kettle-bottom {
+    top: 135px;
+    left: 65px;
     border-radius: 100px 100px 100px 100px;
-    width: 180px;
+    width: 150px;
     height: 140px;
+  }
+  
+  .poly1{
+    background-color: #945f50;
+    width: 165px;
+    height: 165px;
+    top: 38px;
+    left: 5px;
+    z-index: 0;
+    clip-path: polygon(0% 2%, 16% 21%, 28% 50%, 17% 37%);
+  }
+  
+  .poly3 {
+    background-color: #832608;
+    width: 165px;
+    height: 165px;
+    top: 38px;
+    left: 5px;
+    z-index: 0;
+    clip-path: polygon(45% 27%, 72% 20%, 70% 52%, 49% 56%);
+  }
+  
+  .poly2 {
+    background-color: #893018;
+    width: 165px;
+    height: 165px;
+    top: 38px;
+    left: 5px;
+    z-index: 0;
+    clip-path: polygon(16% 22%, 45% 27%, 49% 56%, 28% 50%);
+  }
+  
+  .poly4 {
+    background-color: #6d0f00;
+    width: 165px;
+    height: 165px;
+    top: 38px;
+    left: 5px;
+    z-index: 0;
+    clip-path: polygon(72% 20%, 85% 7%, 86% 20%, 82% 38%, 70% 52%);
+  }
+  
+  .poly5 {
+    background-color: #71250d;
+    width: 165px;
+    height: 165px;
+    top: 38px;
+    left: 5px;
+    z-index: 0;
+    clip-path: polygon(85% 7%, 100% 10%, 86% 18%);
+  }
+  
+  .base {
+    width: 165px;
+    height: 165px;
+    left: 7px;
+    top: 37px;
+    background-color: #6a685c;
+    clip-path: polygon(20% 40%, 83% 35%, 90% 53%, 91% 69%, 89% 74%, 88% 78%, 86% 82%, 83% 86%, 76% 92%, 70% 95%, 63% 98%, 54% 99%, 45% 98%, 37% 95%, 30% 91%, 23% 85%, 17% 71%, 18% 59%);
   }
   
   .stain {
@@ -55,14 +108,39 @@
     height: 30px;
     background-color: white;
   }
+  
+  .ellipse-1 {
+    width: 180px;
+    height: 218px;
+    left: 210px;
+    top: 30px;
+    background-color: #dfc423;
+    clip-path: ellipse(40% 25% at 50% 50%);
+  }
+  
+  .ellipse-2 {
+    width: 195px;
+    height: 240px;
+    left: 320px;
+    top: 90px;
+    background-color: #dfc423;
+    clip-path: ellipse(40% 25% at 50% 50%);
+  }
 
 </style>
 
 
 <div class="frame">
   <div class="stain"></div>
-  <div class="kettle-top"></div>
-  <div class="handle"></div>
-  <div class="handle-stem"></div>
-  <!-- add your elements here -->
+  <div class="kettle-top"></div> 
+  <div class="ellipse-1"></div>
+  <div class="ellipse-2"></div>
+  <div class="kettle-bottom">
+    <div class="base"></div> 
+    <div class="poly1"></div> 
+    <div class="poly2"></div> 
+    <div class="poly3"></div> 
+    <div class="poly4"></div> 
+    <div class="poly5"></div> 
+  </div>
 </div>
