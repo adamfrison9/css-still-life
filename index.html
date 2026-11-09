@@ -1,6 +1,13 @@
 <style>
 
   * { box-sizing: border-box; }
+  
+  :root {
+    --cup-blue: rgba(27, 32, 51, 1);
+    --cup-white: rgba(233, 230, 210, 1); 
+    --top-gradient: #7d7a75;
+    --bottom-gradient: #a4a09a;
+  }
 
   body {
     display: flex;
@@ -15,10 +22,24 @@
     width: 100px;
     height: 100px;
   }
+  
+  .background-gradient {
+    position: absolute;
+    z-index: -5;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(
+      to bottom,
+      var(--top-gradient),
+      var(--bottom-gradient)
+    );
+  }
 
   .frame {
     position: relative;
-    background-color: black;
+    background-color: transparent;
     width: 500px;
     height: 500px;
     border: 1px dashed;
@@ -126,15 +147,149 @@
     background-color: #dfc423;
     clip-path: ellipse(40% 25% at 50% 50%);
   }
+  
+  .cup-container {
+    left: 246px;
+    top: 276px;
+    overflow: hidden;
+    width: 68px;
+    height: 86px;
+    background-color: rgba(1, 1, 1, 0.0);
+  }
+  
+  .cup-1 {
+    right: -6px;
+    top: -4px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-blue);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-2 {
+    right: -6px;
+    top: -10px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-white);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-3 {
+    right: -6px;
+    top: -16px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-blue);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-4 {
+    right: -6px;
+    top: -22px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-white);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-5 {
+    right: -6px;
+    top: -28px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-blue);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-6 {
+    right: -6px;
+    top: -35px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-white);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-7 {
+    right: -6px;
+    top: -41px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-blue);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-8 {
+    right: -6px;
+    top: -47px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-white);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-9 {
+    right: -6px;
+    top: -52px;
+    width: 80px;
+    height: 90px;
+
+    background-color: var(--cup-blue);
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-top {
+    left: 245px;
+    top: 250px;
+    width: 70px;
+    height: 56px;
+
+    background-color: #faf8e2;
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+  
+  .cup-hole {
+    left: 249px;
+    top: 253px;
+    width: 62px;
+    height: 49px;
+
+    background-color: #b3b2a0;
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
 
 </style>
 
 
 <div class="frame">
+
+  <div class="background-gradient"></div>
   <div class="stain"></div>
   <div class="kettle-top"></div> 
   <div class="ellipse-1"></div>
   <div class="ellipse-2"></div>
+  <div class="cup-container">
+    <div class="cup-1"></div>
+    <div class="cup-2"></div>
+    <div class="cup-3"></div>
+    <div class="cup-4"></div>
+    <div class="cup-5"></div>
+    <div class="cup-6"></div>
+    <div class="cup-7"></div>
+    <div class="cup-8"></div>
+    <div class="cup-9"></div>
+  </div>
+  <div class="cup-top"></div>
+  <div class="cup-hole"></div>
   <div class="kettle-bottom">
     <div class="base"></div> 
     <div class="poly1"></div> 
