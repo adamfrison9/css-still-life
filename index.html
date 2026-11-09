@@ -129,15 +129,7 @@
     height: 30px;
     background-color: white;
   }
-  
-  .ellipse-1 {
-    width: 180px;
-    height: 218px;
-    left: 210px;
-    top: 30px;
-    background-color: #dfc423;
-    clip-path: ellipse(40% 25% at 50% 50%);
-  }
+
   
   .ellipse-2 {
     width: 195px;
@@ -266,28 +258,160 @@
     background-color: #b3b2a0;
     clip-path: ellipse(50% 50% at 50% 50%);
   }
+  
+  .coffee-1 {
+    left: 227px;
+    top: 30px;
+    overflow: hidden;
+    width: 145px;
+    height: 300px;
+  }
+  
+  .cap {
+    width: 145px;
+    height: 218px;
+    background-color: #dfc423;
+    clip-path: ellipse(50% 25% at 50% 50%);
+    z-index: 1;
+  }
+  
+  .cylinder {
+    width: 145px;
+    height: 112px;
+    top: 108px;
+    background-color: #c9ad00;
+  }
+  
+  .bg-fill {
+    margin: auto;
+    left: 17.5px;
+    top: 190px;
+    width: 110px;
+    height: 50px;
+    background-color: #c9ad00;
+  }
+  
+  .red_bit {
+    width: 145px;
+    height: 145px;
+    clip-path: polygon(5% 34%, 11% 44%, 21% 54%, 34% 60%, 48% 62%, 62% 61%, 74% 57%, 86% 49%, 94% 39%, 100% 29%, 100% 50%, 96% 61%, 90% 68%, 81% 76%, 68% 81%, 49% 84%, 33% 81%, 20% 76%, 11% 69%, 5% 61%, 0% 52%, 0% 25%);
+    background-color: red;
+    top: 145px;
+    z-index: 5;
+  }
+  
+  .coffee-text-1 {
+    font-size: 25px;
+    position: relative;
+    top: 68px;
+    z-index: 3;
+    transform: skew(0deg, 45deg);
+  }
+  
+  .coffee-text-2 {
+    font-size: 25px;
+    position: relative;
+    top: 40px;
+    z-index: 3;
+    transform: skew(0deg, 45deg);
+  }
+  
+  .cup-segment:nth-child(even) {
+    background-color: var(--cup-blue);
+    
+  }
+  
+  .cup-segment:nth-child(odd) {
+    background-color: var(--cup-white);
+  }
+  
+  .new-cup-container {
+    width: 160px;
+    height: 160px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--x-deg)) rotateY(var(--y-deg)) rotateZ(var(--z-deg));
+  }
+  
+  .new-cup-distort {
+    position: absolute;
+    z-index: 100;
+    perspective: var(--trans-length);
+    perspective-origin: 50% 50%;
+    top: var(--top-offset);
+    left: var(--left-offset);
+    width: var(--segment-width);
+  }
+  
+  .new-cup-container > div {
+    top: calc(sibling-index() * var(--segment-dist));
+    width: var(--segment-width);
+    height: var(--segment-height);
+    z-index: calc(10 - sibling-index());
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
 
 </style>
 
 
 <div class="frame">
-
+  <img style="width:500px; height: 500px" src="square_reference.png">
   <div class="background-gradient"></div>
   <div class="stain"></div>
   <div class="kettle-top"></div> 
-  <div class="ellipse-1"></div>
-  <div class="ellipse-2"></div>
-  <div class="cup-container">
-    <div class="cup-1"></div>
-    <div class="cup-2"></div>
-    <div class="cup-3"></div>
-    <div class="cup-4"></div>
-    <div class="cup-5"></div>
-    <div class="cup-6"></div>
-    <div class="cup-7"></div>
-    <div class="cup-8"></div>
-    <div class="cup-9"></div>
+  <div class="coffee-1">
+    <div class="cap"></div>
+    <div class="cylinder">
+    <p class="coffee-text-1">
+      e
+    </p>
+    <p class="coffee-text-2">
+      elo
+      </p>
+    </div>
+    <div class="bg-fill"></div>
+    <div class="red_bit"></div>
   </div>
+  
+  <div class="new-cup-distort" style="--left-offset: 245px;
+              --top-offset: 235px;
+              --segment-dist: 6px;
+              --segment-width: 80px;
+              --segment-height: 90px;
+              --trans-length: 80px;
+              --x-deg: 4deg;
+              --y-deg: 0deg;">
+    <div class="new-cup-container">
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+    </div>
+  </div>
+  
+    <div class="new-cup-distort" style="--left-offset: 386px;
+              --top-offset: 139px;
+              --segment-dist: 4px;
+              --segment-width: 80px;
+              --segment-height: 90px;
+              --trans-length: 150px;
+              --x-deg: 2deg;
+              --y-deg: -10deg;
+              --z-deg: 15deg;">
+    <div class="new-cup-container">
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+      <div class="cup-segment"></div>
+    </div>
+  </div>
+
   <div class="cup-top"></div>
   <div class="cup-hole"></div>
   <div class="kettle-bottom">
