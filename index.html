@@ -1,5 +1,4 @@
 <style>
-
   * { box-sizing: border-box; }
   
   :root {
@@ -9,8 +8,9 @@
     --coffee-yellow: rgba(223, 196, 35, var(--test-alpha));
     --coffee-dark-yellow: rgba(201, 173, 0, var(--test-alpha));
     --coffee-red: rgba(180, 50, 40, var(--test-alpha));
-    --top-gradient: #7d7a75;
-    --bottom-gradient: #a4a09a;
+    --kettle: #ff6729;
+    --top-gradient: #777777;
+    --bottom-gradient: #111111;
   }
 
   body {
@@ -27,309 +27,359 @@
     height: 100px;
   }
   
-  .background-gradient {
-    position: absolute;
-    z-index: -5;
-    top: 0px;
-    left: 0px;
+  /* BG */
+  .frame {
+    background-color: black;
+    border: 1px dashed;
+
+    position: relative;
     width: 500px;
     height: 500px;
+  }
+
+  .background-gradient {
     background: linear-gradient(
       to bottom,
       var(--top-gradient),
       var(--bottom-gradient)
     );
-  }
-
-  .frame {
-    position: relative;
-    background-color: black;
+    
+    top: 0px;
+    left: 0px;
     width: 500px;
     height: 500px;
-    border: 1px dashed;
   }
 
   .kettle-top {
-    background-color: #FF6729;
+    background-color: var(--kettle);
+  
+    z-index: 3;
     top: 90px;
     left: 70px;
     width: 165px;
     height: 165px;
+  
     clip-path: polygon(22% 10%, 50% 3%, 76% 10%, 92% 28%, 92% 42%, 98% 47%, 94% 59%, 85% 58%, 72% 71%, 45% 78%, 16% 72%, 0% 52%, 2% 35%, 9% 20%);
-    z-index: 0;
+  }
+  
+  .kettle-top-extension {
+    background-color: var(--kettle);
+
+    z-index: 4;
+    top: 113px;
+    left: 48px;
+    width: 47px;
+    height: 47px;
+    
+    clip-path: polygon(21% 20%, 37% 22%, 46% 14%, 97% 26%, 70% 93%, 27% 82%, 16% 69%, 18% 62%, 10% 41%);
   }
   
   .kettle-bottom {
     top: 135px;
     left: 65px;
-    border-radius: 100px 100px 100px 100px;
     width: 150px;
     height: 140px;
   }
   
-  .poly1{
-    background-color: #945f50;
-    width: 165px;
-    height: 165px;
-    top: 38px;
-    left: 5px;
-    z-index: 0;
-    clip-path: polygon(0% 2%, 16% 21%, 28% 50%, 17% 37%);
+  .kettle-handle {
+    background-color: black;
+
+    left: -10px;
+    top: 114px;
+
+    clip-path: polygon(74% 9%, 71% 37%, 58% 36%, 51% 39%, 53% 45%, 55% 53%, 53% 60%, 58% 67%, 58% 75%, 65% 83%, 66% 92%, 56% 95%, 42% 94%, 35% 79%, 28% 59%, 26% 42%, 27% 28%, 33% 18%, 43% 12%, 57% 10%);
   }
   
-  .poly3 {
-    background-color: #832608;
-    width: 165px;
-    height: 165px;
+  .kettle-gripper {
+    background-color: #222222;
+
+    z-index: 5;
+    top: 110px;
+    left: 124px;
+    width: 40px;
+    height: 40px;
+
+    clip-path: polygon(31% 7%, 52% 4%, 73% 9%, 87% 25%, 87% 43%, 80% 75%, 63% 94%, 44% 94%, 25% 78%, 11% 44%, 12% 25%);
+  }
+  
+  .poly1{
+    background-color: #945f50;
+
+    z-index: 3;
     top: 38px;
     left: 5px;
-    z-index: 0;
+    width: 165px;
+    height: 165px;
+
+    clip-path: polygon(0% 2%, 16% 21%, 28% 50%, 17% 37%);
+  }
+
+  .poly2 {
+    background-color: #893018;
+
+    z-index: 3;
+    top: 38px;
+    left: 5px;
+    width: 165px;
+    height: 165px;
+
+    clip-path: polygon(16% 22%, 45% 27%, 49% 56%, 28% 50%);
+  }
+
+  .poly3 {
+    background-color: #832608;
+
+    z-index: 3;
+    top: 38px;
+    left: 5px;
+    width: 165px;
+    height: 165px;
+
     clip-path: polygon(45% 27%, 72% 20%, 70% 52%, 49% 56%);
   }
   
-  .poly2 {
-    background-color: #893018;
-    width: 165px;
-    height: 165px;
-    top: 38px;
-    left: 5px;
-    z-index: 0;
-    clip-path: polygon(16% 22%, 45% 27%, 49% 56%, 28% 50%);
-  }
-  
+
   .poly4 {
     background-color: #6d0f00;
-    width: 165px;
-    height: 165px;
+
+    z-index: 3;
     top: 38px;
     left: 5px;
-    z-index: 0;
+    width: 165px;
+    height: 165px;
+
     clip-path: polygon(72% 20%, 85% 7%, 86% 20%, 82% 38%, 70% 52%);
   }
   
   .poly5 {
     background-color: #71250d;
-    width: 165px;
-    height: 165px;
+
+    z-index: 3;
     top: 38px;
     left: 5px;
-    z-index: 0;
-    clip-path: polygon(85% 7%, 100% 10%, 86% 18%);
+    width: 165px;
+    height: 165px;
+
+    clip-path: polygon(85% 7%, 100% 9%, 85% 18%);
   }
   
   .spout {
-    background-color: gray;
+    background-color: #444444;
+
+    z-index: 1;
     top: 147px;
     left: 202px;
     width: 52px;
     height: 52px;
-    clip-path: polygon(37% 20%, 87% 59%, 82% 82%, 11% 79%);
-    z-index: 1;
+
+    clip-path: polygon(37% 26%, 87% 59%, 82% 82%, 11% 73%);
+  }
+
+  .base-ellipse {
+    background-color: #453844;
+
+    z-index: 2;
+    top: 65px;
+    left: 34px;
+    width: 108px;
+    height: 70px;
+
+    clip-path: ellipse(50% 50% at 50% 50%);
   }
   
-  .base {
+  .base-shape {
+    background-color: #6a685c;
+
+    z-index: 1;
+    top: 37px;
+    left: 7px;
     width: 165px;
     height: 165px;
-    left: 7px;
-    top: 37px;
-    background-color: #6a685c;
-    clip-path: polygon(20% 40%, 83% 35%, 90% 53%, 91% 69%, 89% 74%, 88% 78%, 86% 82%, 83% 86%, 76% 92%, 70% 95%, 63% 98%, 54% 99%, 45% 98%, 37% 95%, 30% 91%, 23% 85%, 17% 71%, 18% 59%);
+
+    clip-path: polygon(15% 35%, 83% 35%, 89% 53%, 90% 69%, 89% 74%, 86% 82%, 83% 86%, 76% 92%, 70% 95%, 63% 98%, 54% 99%, 45% 98%, 37% 95%, 30% 91%, 23% 85%, 15% 73%, 12% 58%);
   }
   
-  .ellipse-2 {
-    width: 195px;
-    height: 240px;
-    left: 320px;
-    top: 90px;
-    background-color: #dfc423;
-    clip-path: ellipse(40% 25% at 50% 50%);
-  }
-  
-  .cup-container {
-    left: 246px;
-    top: 276px;
-    overflow: hidden;
-    width: 68px;
-    height: 86px;
-    background-color: rgba(1, 1, 1, 0.0);
-  }
-  
+  /* Coffee Contaienrs */
   .coffee-distort {
-    position: absolute;
-    left: var(--left-offset);
-    top: var(--top-offset);
     perspective: var(--trans-length);
     perspective-origin: 50% 50%;
+
+    top: var(--top-offset);
+    left: var(--left-offset);
   }
   
-  .coffee-1 {
+  .coffee {
+    transform: rotateX(var(--x-deg)) rotateY(var(--y-deg)) rotateZ(var(--z-deg));
     width: 145px;
     height: 300px;
-    transform: rotateX(var(--x-deg)) rotateY(var(--y-deg)) rotateZ(var(--z-deg));
   }
   
-  .cap {
+  .coffee-cap {
+    background-color: var(--coffee-yellow);
+
+    z-index: 1;
     width: 145px;
     height: 218px;
-    background-color: var(--coffee-yellow);
+
     clip-path: ellipse(50% 25% at 50% 50%);
-    z-index: 1;
   }
   
-  .cylinder {
+  .coffee-cylinder {
+    background-color: var(--coffee-dark-yellow);
+
+    top: 108px;
     width: 145px;
     height: 112px;
-    top: 108px;
-    background-color: var(--coffee-dark-yellow);
   }
-  
-  .bg-fill {
-    margin: auto;
-    left: 17.5px;
+
+  .coffee-fill {
+    background-color: var(--coffee-dark-yellow);
+
     top: 190px;
+    left: 17.5px;
     width: 110px;
     height: 50px;
-    background-color: var(--coffee-dark-yellow)
   }
   
-  .red_bit {
+  .red-bit {
+    background-color: var(--coffee-red);
+
+    top: 145px;
     width: 145px;
     height: 145px;
+
     clip-path: polygon(5% 34%, 11% 44%, 21% 54%, 34% 60%, 48% 62%, 62% 61%, 74% 57%, 86% 49%, 95% 39%, 100% 29%, 100% 52%, 96% 61%, 90% 69%, 80% 77%, 67% 82%, 49% 83.5%, 33% 81%, 20% 76%, 11% 69%, 5% 61%, 0% 52%, 0% 25%);
-    background-color: var(--coffee-red);
-    top: 145px;
-    z-index: 5;
   }
   
-  .coffee-text-1 {
-    font-size: 25px;
-    position: relative;
-    top: 68px;
-    z-index: 3;
-    transform: skew(0deg, 45deg);
-  }
-  
-  .coffee-text-2 {
-    font-size: 25px;
-    position: relative;
-    top: 40px;
-    z-index: 3;
-    transform: skew(0deg, 45deg);
-  }
-  
+  /* Mugs */
   .cup-segment:nth-child(even) {
     background-color: var(--cup-blue);
-    
   }
   
   .cup-segment:nth-child(odd) {
     background-color: var(--cup-white);
   }
-  
-  .new-cup-distort {
-    overflow: hidden;
-    position: absolute;
-    z-index: 100;
+
+  .cup-distort {
     perspective: var(--trans-length);
     perspective-origin: 50% 50%;
+
+    z-index: 1;
     top: var(--top-offset);
     left: var(--left-offset);
     width: 90px;
     height: 500px;
+    
+    overflow: hidden;
   }
   
-  .new-cup-container {
-    width: 160px;
-    height: 160px;
+  .cup-container {
     transform-style: preserve-3d;
     transform: rotateX(var(--x-deg)) rotateY(var(--y-deg)) rotateZ(var(--z-deg));
+    width: 160px;
+    height: 160px;
   }
   
   .two-handles {
-    position: absolute;
+    background-color: #cccccc;
+
     top: 280px;
     left: 215px;
     width: 60px;
     height: 60px;
-    background-color: #cccccc;
+
     clip-path: polygon(50% 3%, 59% 7%, 59% 23%, 48% 18%, 45% 24%, 49% 32%, 59% 38%, 59% 74%, 47% 63%, 42% 65%, 48% 74%, 59% 81%, 59% 94%, 53% 93%, 46% 88%, 37% 81%, 32% 71%, 30% 59%, 34% 53%, 39% 49%, 50% 50%, 59% 56%, 59% 52%, 49% 48%, 39% 42%, 34% 35%, 32% 28%, 32% 21%, 35% 10%, 42% 4%);
   }
   
   .handle {
-    width: 45px;
-    height: 45px;
+    background-color: var(--cup-white);
+
     top: 202px;
     left: 385px;
-    background-color: var(--cup-white);
-  clip-path: polygon(60% 6%, 67% 5%, 74% 8%, 77% 14%, 70% 37%, 62% 65%, 58% 86%, 52% 93%, 45% 92%, 38% 85%, 42% 59%, 49% 30%);
+    width: 45px;
+    height: 45px;
+
+    clip-path: polygon(60% 6%, 67% 5%, 74% 8%, 77% 14%, 70% 37%, 62% 65%, 58% 86%, 52% 93%, 45% 92%, 38% 85%, 42% 59%, 49% 30%);
     z-index: 200;
   }
   
   .flag-1 {
-    position: absolute;
+    background-color: #bb0000;
+
     top: 72px;
     right: 75px;
-    background-color: #bb0000;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     width: 30px;
     height: 13px;
-    z-index: 10;
     transform: skew(0deg, 46deg);
+
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
   
   .flag-2 {
-    position: absolute;
+    background-color: #bb0000;
+
     top: 90px;
     right: 75px;
-    background-color: #bb0000;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     width: 30px;
     height: 13px;
-    z-index: 10;
     transform: skew(0deg, 45deg);
+
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   }
   
-  .new-cup-container > div {
+  .cup-container > div {
+    z-index: calc(10 - sibling-index());
     top: calc(sibling-index() * var(--segment-dist));
     width: var(--segment-width);
     height: var(--segment-height);
-    z-index: calc(10 - sibling-index());
+
     clip-path: ellipse(50% 50% at 50% 50%);
   }
   
   .cup-hole {
-    position: absolute;
-    left: 3px;
+    background-color: #aaaaaa;
+
+    z-index: 11 !important;
     top: 10px !important;
+    left: 3px;
     width: calc(var(--segment-width) - 6px) !important;
     height: calc(var(--segment-height) - 11px) !important;
-
-    background-color: #aaaaaa;
-    z-index: 130 !important;
   }
-  
-
-
 </style>
 
-
 <div class="frame">
-
-
+  <!-- BG -->
   <div class="background-gradient"></div>
+  
+  <!-- Kettle -->
   <div class="kettle-top"></div> 
+  <div class="kettle-top-extension"></div> 
+  <div class="kettle-gripper"></div> 
+  <div class="kettle-bottom">
+    <div class="base-ellipse"></div> 
+    <div class="base-shape"></div> 
+    <div class="poly1"></div> 
+    <div class="poly2"></div> 
+    <div class="poly3"></div> 
+    <div class="poly4"></div> 
+    <div class="poly5"></div> 
+  </div>
+  <div class="spout"></div>
+  <div class="kettle-handle"></div>
+  
+  <!-- Coffee Containers -->
   <div class="coffee-distort" style="--left-offset: 230px;
                                      --top-offset: 25px;
                                      --trans-length: 1200px;
                                      --x-deg: 5deg;
                                      --y-deg: 25deg;
                                      --z-deg: 5deg;">
-    <div class="coffee-1">
-      <div class="cap"></div>
-      <div class="cylinder">
+    <div class="coffee">
+      <div class="coffee-cap"></div>
+      <div class="coffee-cylinder">
       </div>
-      <div class="bg-fill"></div>
-      <div class="red_bit"></div>
+      <div class="coffee-fill"></div>
+      <div class="red-bit"></div>
     </div>
   </div>
   
@@ -339,16 +389,17 @@
                                      --x-deg: 0deg;
                                      --y-deg: 25deg;
                                      --z-deg: 15deg;">
-    <div class="coffee-1">
-      <div class="cap"></div>
-      <div class="cylinder">
+    <div class="coffee">
+      <div class="coffee-cap"></div>
+      <div class="coffee-cylinder">
       </div>
-      <div class="bg-fill"></div>
-      <div class="red_bit"></div>
+      <div class="coffee-fill"></div>
+      <div class="red-bit"></div>
     </div>
   </div>
-  
-  <div class="new-cup-distort" style="--left-offset: 245px;
+
+  <!-- Mugs -->
+  <div class="cup-distort" style="--left-offset: 245px;
               --top-offset: 235px;
               --segment-dist: 6px;
               --segment-width: 70px;
@@ -357,7 +408,7 @@
               --x-deg: 40deg;
               --y-deg: -2deg;
               --z-deg: 0deg;">
-    <div class="new-cup-container">
+    <div class="cup-container">
       <div class="cup-segment"></div>
       <div class="cup-segment"></div>
       <div class="cup-segment"></div>
@@ -373,7 +424,7 @@
     <div class="flag-2"></div>
   </div>
   
-  <div class="new-cup-distort" style="--left-offset: 386px;
+  <div class="cup-distort" style="--left-offset: 386px;
             --top-offset: 125px;
             --segment-dist: 6px;
             --segment-width: 80px;
@@ -382,7 +433,7 @@
             --x-deg: 15deg;
             --y-deg: 0deg;
             --z-deg: 13deg;">
-    <div class="new-cup-container">
+    <div class="cup-container">
       <div class="cup-segment"></div>
       <div class="cup-segment"></div>
       <div class="cup-segment"></div>
@@ -393,21 +444,6 @@
     </div>
   </div>
 
-  <div class="kettle-bottom">
-    <div class="base"></div> 
-    <div class="poly1"></div> 
-    <div class="poly2"></div> 
-    <div class="poly3"></div> 
-    <div class="poly4"></div> 
-    <div class="poly5"></div> 
-  </div>
-  <div class="spout"></div>
-  
-  <div class="two-handles">
-    
-  </div>
-  
-  <div class="handle">
-    
-  </div>
+  <div class="two-handles"> </div>
+  <div class="handle"> </div>
 </div>
