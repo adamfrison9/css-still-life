@@ -215,7 +215,7 @@
   }
   
   .coffee-cap {
-    background-color: var(--coffee-yellow);
+    background-color: color-mix(in oklab, #000000 var(--darkness), var(--coffee-yellow));
 
     z-index: 1;
     width: 145px;
@@ -225,7 +225,7 @@
   }
   
   .coffee-cylinder {
-    background-color: var(--coffee-dark-yellow);
+    background-color: color-mix(in oklab, #000000 var(--darkness), var(--coffee-dark-yellow));
 
     top: 108px;
     width: 145px;
@@ -233,7 +233,7 @@
   }
 
   .coffee-fill {
-    background-color: var(--coffee-dark-yellow);
+    background-color: color-mix(in oklab, #000000 var(--darkness), var(--coffee-dark-yellow));
 
     top: 190px;
     left: 17.5px;
@@ -242,7 +242,7 @@
   }
   
   .red-bit {
-    background-color: var(--coffee-red);
+        background-color: color-mix(in oklab, #000000 var(--darkness), var(--coffee-red));
 
     top: 145px;
     width: 145px;
@@ -374,7 +374,8 @@
                                      --trans-length: 1200px;
                                      --x-deg: 5deg;
                                      --y-deg: 25deg;
-                                     --z-deg: 5deg;">
+                                     --z-deg: 5deg;
+                                     --darkness: 7%;">
     <div class="coffee">
       <div class="coffee-cap"></div>
       <div class="coffee-cylinder">
@@ -389,7 +390,8 @@
                                      --trans-length: 1200px;
                                      --x-deg: 0deg;
                                      --y-deg: 25deg;
-                                     --z-deg: 15deg;">
+                                     --z-deg: 16deg;
+                                     --darkness: 0%;">
     <div class="coffee">
       <div class="coffee-cap"></div>
       <div class="coffee-cylinder">
