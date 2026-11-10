@@ -328,6 +328,7 @@
   }
   
   .cup-container > div {
+    /* Code inspiration from https://css-tip.com/nth-child/ */
     z-index: calc(10 - sibling-index());
     top: calc(sibling-index() * var(--segment-dist));
     width: var(--segment-width);
